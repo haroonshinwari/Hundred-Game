@@ -29,7 +29,14 @@ def is_game_over(computer_score, human_score):      #function to determine wheth
 def roll():                                         #function to roll the die randomly        
     return random.randint(1,6)
 def ask_yes_or_no(prompt):                          #function to ask if the user would like to roll again or not 
-
+    print(prompt)
+    x = input()
+    if x[0:1] == 'y' or x[0:1] == 'Y':
+        print('True')
+        return True
+    elif x[0:1] == 'n' or x[0:1] == 'N':
+        print('False')
+        return False
 def show_results(computer_score, human_score):      #function to show the results, who won and by how much when the game has ended
     
 
