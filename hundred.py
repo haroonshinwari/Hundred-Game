@@ -8,12 +8,13 @@ Whoever gets to 100 first wins, however as the computer starts first,it has an a
 the other player is given another turn, and whomever scores highest wins, if they are tied, they keep rolling until one gets a higher score.
 '''
 
+
 import random
 
 def main():                                         #this is the fuction that will start the programme for execution
-
+    rules()
 def rules():                                        #function for printing the rules and instructions for the player
-
+    print("This is a simple die game with the objective to score 100 first.\nAt each turn you must choose to roll or not to roll.\nYou may roll as many times as you wish, and stop whenever you like.\nEverytime you roll you increase your cumulative score for that turn by the amount rolled.\nand this is added to your total score at the end of your turn.\nHowever if you roll a 1, your cumulative score for that turn goes to 0 and it is the next person’s turn.\n\nGiven the computer starts first, it has an advantage.\nTherefore you will have an extra turn if the computer reaches 100 first.\nThe winner is then decided by whoever has the highest score.\nIf it is tied then you keep rolling until whoever scores highest.") 
 def human_move(computer_score, human_score):        #function to run when it is the human turn/move
 
 def computer_move(computer_score, human_score):     #function to run when it is the computer's turn/move
@@ -26,3 +27,5 @@ def ask_yes_or_no(prompt):                          #function to ask if the user
 
 def show_results(computer_score, human_score):      #function to show the results, who won and by how much when the game has ended
     
+
+main()
