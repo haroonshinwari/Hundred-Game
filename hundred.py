@@ -1,7 +1,12 @@
-'''Haroon SHINWARI
+'''Haroon SHINWARI -
+This is a simple die game, where the objective is to score 100 by rolling a die. The computer starts first, and at each turn,
+the computer or player depending on whose turn it is, must decide to either roll or not roll. They acumulate a score of whatever
+they roll in one turn and it is added to their score, unless they roll a 1 in which case their cumulative score for that turn is 0,
+and it is the other players turn. If a player chooses not to roll, his cumulative score for that turn is added to his total score.
 
-
-fill in description of the game'''
+Whoever gets to 100 first wins, however as the computer starts first,it has an advantage and therefore if the computer reaches 100,
+the other player is given another turn, and whomever scores highest wins, if they are tied, they keep rolling until one gets a higher score.
+'''
 
 import random
 
