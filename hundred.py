@@ -27,7 +27,20 @@ def human_move(human_score):        #function to run when it is the human turn/m
             human_score = 0
             return human_score 
 
-def computer_move(computer_score, human_score):     #function to run when it is the computer's turn/move
+def computer_move(computer_score):     #function to run when it is the computer's turn/move
+    y = comproll()
+    while y != 5:
+        x = roll()
+        print('computer rolled a ' + str(x))
+        if x != 1:
+            computer_score = x
+            return computer_score
+        else:
+            computer_score = 0
+            return computer_score
+        break
+    print('computer chooses not to roll')
+    return 0 
 
 def is_game_over(computer_score, human_score):      #function to determine whether there is a winner or not and if the game is over
       if (computer_score >= 100 or human_score >= 100) and computer_score != human_score:
