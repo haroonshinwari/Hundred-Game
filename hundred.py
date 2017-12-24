@@ -12,6 +12,36 @@ the other player is given another turn, and whomever scores highest wins, if the
 import random
 
 def main():                                         #this is the fuction that will start the programme for execution
+    computer_score = 0
+    human_score = 0
+    rules()
+    
+    checkgame = False
+    while checkgame == False:
+        repeat = True
+        while repeat == True:
+            a = computer_score
+            computer_score += computer_move(computer_score)
+            print('computers total score is: ' + str(computer_score))
+            if a == computer_score or computer_score == 0:
+                break
+            
+        repeath = True
+        while repeath == True:
+            repeath = ask_yes_or_no('Would you like to roll?')
+            if repeath == False:
+                print(human_score)
+                break
+            d = human_score
+            human_score = human_score + human_move(human_score)
+            if human_score == 0 or d == human_score:
+                print(human_score)
+                break
+            print('Your total score is: ' + str(human_score))
+            
+        checkgame = is_game_over(computer_score, human_score)
+        
+    show_results(computer_score, human_score)
 
 def rules():                                        #function for printing the rules and instructions for the player
     print("This is a simple die game with the objective to score 100 first.\nAt each turn you must choose to roll or not to roll.\nYou may roll as many times as you wish, and stop whenever you like.\nEverytime you roll you increase your cumulative score for that turn by the amount rolled.\nand this is added to your total score at the end of your turn.\nHowever if you roll a 1, your cumulative score for that turn goes to 0 and it is the next person’s turn.\n\nGiven the computer starts first, it has an advantage.\nTherefore you will have an extra turn if the computer reaches 100 first.\nThe winner is then decided by whoever has the highest score.\nIf it is tied then you keep rolling until whoever scores highest.") 
