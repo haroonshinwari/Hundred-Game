@@ -26,8 +26,13 @@ def is_game_over(computer_score, human_score):      #function to determine wheth
     else:
         print('not game over')
         return False
+    
 def roll():                                         #function to roll the die randomly        
     return random.randint(1,6)
+
+def comproll():
+    return random.randint(1,5)                      #function to decide if the computer rolls or not 
+
 def ask_yes_or_no(prompt):                          #function to ask if the user would like to roll again or not 
     print(prompt)
     x = input()
