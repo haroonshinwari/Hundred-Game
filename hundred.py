@@ -38,5 +38,10 @@ def ask_yes_or_no(prompt):                          #function to ask if the user
         print('False')
         return False
 def show_results(computer_score, human_score):      #function to show the results, who won and by how much when the game has ended
-    
+    if computer_score > human_score:
+        cwin = computer_score - human_score
+        print('Computer WINS! Computer wins by ' + str(cwin))
+    elif human_score > computer_score:
+        hwin = human_score - computer_score
+        print('Player WINS! Player wins by ' + str(hwin))   
 
