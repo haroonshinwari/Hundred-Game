@@ -73,7 +73,7 @@ def computer_move(computer_score):     #function to run when it is the computer'
     return 0 
 
 def is_game_over(computer_score, human_score):      #function to determine whether there is a winner or not and if the game is over
-      if (computer_score >= 100 or human_score >= 100) and computer_score != human_score:
+    if (computer_score >= 100 or human_score >= 100) and computer_score != human_score:
         print('GAME OVER')
         return True
     else:
@@ -101,3 +101,4 @@ def show_results(computer_score, human_score):      #function to show the result
         hwin = human_score - computer_score
         print('Player WINS! Player wins by ' + str(hwin))   
 
+main()
