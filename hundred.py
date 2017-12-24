@@ -15,7 +15,17 @@ def main():                                         #this is the fuction that wi
 
 def rules():                                        #function for printing the rules and instructions for the player
     print("This is a simple die game with the objective to score 100 first.\nAt each turn you must choose to roll or not to roll.\nYou may roll as many times as you wish, and stop whenever you like.\nEverytime you roll you increase your cumulative score for that turn by the amount rolled.\nand this is added to your total score at the end of your turn.\nHowever if you roll a 1, your cumulative score for that turn goes to 0 and it is the next person’s turn.\n\nGiven the computer starts first, it has an advantage.\nTherefore you will have an extra turn if the computer reaches 100 first.\nThe winner is then decided by whoever has the highest score.\nIf it is tied then you keep rolling until whoever scores highest.") 
-def human_move(computer_score, human_score):        #function to run when it is the human turn/move
+
+def human_move(human_score):        #function to run when it is the human turn/move
+        h = roll()
+        print('You rolled a ' + str(h))
+        if h != 1:
+            human_score = h
+            print(human_score)
+            return human_score
+        else:
+            human_score = 0
+            return human_score 
 
 def computer_move(computer_score, human_score):     #function to run when it is the computer's turn/move
 
@@ -37,10 +47,8 @@ def ask_yes_or_no(prompt):                          #function to ask if the user
     print(prompt)
     x = input()
     if x[0:1] == 'y' or x[0:1] == 'Y':
-        print('True')
         return True
     elif x[0:1] == 'n' or x[0:1] == 'N':
-        print('False')
         return False
 def show_results(computer_score, human_score):      #function to show the results, who won and by how much when the game has ended
     if computer_score > human_score:
